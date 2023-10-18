@@ -36,6 +36,7 @@ class _SinglePostCardWidgetState extends State<SinglePostCardWidget> {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
