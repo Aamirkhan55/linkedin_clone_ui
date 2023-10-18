@@ -7,7 +7,7 @@ import 'package:linkedin_clone_ui/pages/main/create/create_screen.dart';
 import 'package:linkedin_clone_ui/pages/main/home/home_screen.dart';
 import 'package:linkedin_clone_ui/pages/main/jobs/jobs_screen.dart';
 import 'package:linkedin_clone_ui/pages/main/network/network_screen.dart';
-import 'package:linkedin_clone_ui/pages/main/notification/notification_widget.dart';
+import 'package:linkedin_clone_ui/pages/main/notification/notification_screen.dart';
 import 'package:linkedin_clone_ui/theme/style.dart';
 
 
