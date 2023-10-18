@@ -1,10 +1,65 @@
-import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:linkedin_clone_ui/data/post_entity.dart';
+import 'package:linkedin_clone_ui/pages/main/home/home_widgets/single_post_widget.dart';
+import 'package:linkedin_clone_ui/theme/style.dart';
+
+
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  ScrollController _controller = ScrollController();
+
+  bool _isShow = true;
+
+  List<PostEntity> postData = PostEntity.postListData;
+
+  @override
+  void initState() {
+    _controller.addListener(() {
+      if(_controller.position.pixels > 3) {
+        setState(() {
+          _isShow = false;
+        });
+      } else {
+        setState(() {
+          _isShow = true;
+        });
+      }
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      body: Column(
+        children: [
+          const SizedBox(height: 5,),
+          _isShow ?Container(
+            width: double.infinity,
+            height: 8,
+            color: linkedInLightGreyCACCCE,
+          ) : Container(),
+
+          Expanded(
+            child: ListView.builder(
+              controller: _controller,
+              itemCount: postData.length,
+              itemBuilder: (context, index) {
+                final post = postData[index];
+                return SinglePostCardWidget(post: post);
+              },
+            ),
+          ),
+        ],
+      )
+    );
   }
 }
