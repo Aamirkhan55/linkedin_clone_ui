@@ -3,16 +3,16 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:linkedin_clone_ui/theme/style.dart';
 
 
-class CreatePage extends StatefulWidget {
+class CreateScreen extends StatefulWidget {
   final VoidCallback? onCloneClickListener;
-  const CreatePage({Key? key, required this.onCloneClickListener})
+  const CreateScreen({Key? key, required this.onCloneClickListener})
       : super(key: key);
 
   @override
-  State<CreatePage> createState() => _CreatePageState();
+  State<CreateScreen> createState() => _CreateScreenState();
 }
 
-class _CreatePageState extends State<CreatePage> {
+class _CreateScreenState extends State<CreateScreen> {
 
   final TextEditingController _postBodyController = TextEditingController();
 
