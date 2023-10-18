@@ -117,7 +117,7 @@ class _MainScreenState extends State<MainScreen> {
         }
       case 4:
         {
-          return const JobScreen();
+          return const JobsScreen();
         }
     }
   }
