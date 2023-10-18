@@ -1,15 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:linkedin_clone_ui/data/network_entity.dart';
 import 'package:linkedin_clone_ui/theme/style.dart';
-
 
 class SingleNetworkUserWidget extends StatefulWidget {
   final NetworkEntity network;
   const SingleNetworkUserWidget({super.key, required this.network});
 
   @override
-  State<SingleNetworkUserWidget> createState() => _SingleNetworkUserWidgetState();
+  State<SingleNetworkUserWidget> createState() =>
+      _SingleNetworkUserWidgetState();
 }
 
 class _SingleNetworkUserWidgetState extends State<SingleNetworkUserWidget> {
@@ -24,34 +23,65 @@ class _SingleNetworkUserWidgetState extends State<SingleNetworkUserWidget> {
               Container(
                 width: double.infinity,
                 height: 80,
-                decoration: const BoxDecoration(
-                    color: linkedInLightGreyCACCCE
+                decoration: const BoxDecoration(color: linkedInLightGreyCACCCE),
+                child: Image.asset(
+                  "assets/${widget.network.userBgImage}",
+                  fit: BoxFit.cover,
                 ),
-                child: Image.asset("assets/${widget.network.userBgImage}", fit: BoxFit.cover,),
               ),
-              const SizedBox(height: 60,),
-               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text("${widget.network.username}", maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+              const SizedBox(
+                height: 60,
               ),
-              const SizedBox(height: 5,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text("${widget.network.userBio}", maxLines: 1, overflow: TextOverflow.ellipsis, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w500, color: linkedInMediumGrey86888A),),
+                child: Text(
+                  "${widget.network.username}",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                ),
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Text(
+                  "${widget.network.userBio}",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: linkedInMediumGrey86888A),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Icon(Icons.group),
-                    const SizedBox(width: 10,),
-                    Expanded(child: Text("${widget.network.mutualConnections} mutual connections", maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(color: linkedInMediumGrey86888A),))
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                        child: Text(
+                      "${widget.network.mutualConnections} mutual connections",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(color: linkedInMediumGrey86888A),
+                    ))
                   ],
                 ),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
                 width: double.infinity,
@@ -61,12 +91,17 @@ class _SingleNetworkUserWidgetState extends State<SingleNetworkUserWidget> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Center(
-                  child: Text("Connect", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: linkedInBlue0077B5),),
+                  child: Text(
+                    "Connect",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: linkedInBlue0077B5),
+                  ),
                 ),
               )
             ],
           ),
-
           Align(
             alignment: Alignment.topCenter,
             child: Container(
@@ -74,10 +109,13 @@ class _SingleNetworkUserWidgetState extends State<SingleNetworkUserWidget> {
               width: 110,
               height: 110,
               decoration: const BoxDecoration(
-                  color: linkedInMediumGrey86888A,
-                  shape: BoxShape.circle
-              ),
-              child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset("assets/${widget.network.userProfileImage}", fit: BoxFit.cover,)),
+                  color: linkedInMediumGrey86888A, shape: BoxShape.circle),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(60),
+                  child: Image.asset(
+                    "assets/${widget.network.userProfileImage}",
+                    fit: BoxFit.cover,
+                  )),
             ),
           )
         ],

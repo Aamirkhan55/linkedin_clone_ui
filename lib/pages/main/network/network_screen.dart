@@ -85,9 +85,6 @@ class _NetworkScreenState extends State<NetworkScreen> {
             const SizedBox(
               height: 15,
             ),
-
-
-
             GridView.builder(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               shrinkWrap: true,
